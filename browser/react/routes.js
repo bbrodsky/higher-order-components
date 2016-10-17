@@ -1,15 +1,15 @@
 'use strict';
 
 import React from 'react';
-import { 
-  Router, 
-  Route, 
-  IndexRedirect, 
-  browserHistory 
+import {
+  Router,
+  Route,
+  IndexRedirect,
+  browserHistory
 } from 'react-router';
 import {
-  onAlbumsEnter, 
-  onAppEnter, 
+  onAlbumsEnter,
+  onAppEnter,
   onArtistsEnter
 } from './enter-hooks';
 import App from './components/App';
@@ -19,6 +19,7 @@ import ArtistsContainer from './components/all-artists/ArtistsContainer';
 import ArtistContainer from './components/artist/ArtistContainer';
 import ArtistAlbums from './components/artist/ArtistAlbums';
 import ArtistSongs from './components/artist/ArtistSongs';
+import Playlist from './components/playlist/Playlist';
 
 export default () => (
   <Router history={browserHistory}>
@@ -31,6 +32,7 @@ export default () => (
         <Route path="albums" component={ArtistAlbums} />
         <Route path="songs" component={ArtistSongs} />
       </Route>
+      <Route path="playlist" component={Playlist} />
     </Route>
   </Router>
 );

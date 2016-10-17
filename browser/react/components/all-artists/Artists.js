@@ -2,13 +2,23 @@
 
 import React from 'react';
 import { Link } from 'react-router';
+import Filter from '../filter/Filter' // not working
+
+
 
 export default function (props) {
-  const artists = props.artists;
-  
+  let artists = props.artists;
+  const inputValue = props.inputValue;
+
+  artists = artists.filter( (artist) => {
+    console.log(artist)
+    return artist.name.toLowerCase().match(inputValue);
+  });
+
   return (
     <div>
       <h3>Artists</h3>
+      <Filter />
       <div className="list-group">
         {
           artists.map(artist => (
