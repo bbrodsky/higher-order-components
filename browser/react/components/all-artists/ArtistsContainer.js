@@ -2,6 +2,7 @@
 
 import { connect } from 'react-redux';
 import Artists from './Artists';
+import Filter from './Filter';
 
 const mapStateToProps = function (state) {
   return {
@@ -9,6 +10,6 @@ const mapStateToProps = function (state) {
   };
 };
 
-const statefulComponentCreator = connect(mapStateToProps);
-const ArtistsContainer = statefulComponentCreator(Artists);
-export default ArtistsContainer;
+export default connect(
+  mapStateToProps
+)(Filter(Artists));
